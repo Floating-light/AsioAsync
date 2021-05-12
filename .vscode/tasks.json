@@ -1,0 +1,35 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: cl.exe build active file",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/Fo:",
+                "${workspaceFolder}\\debug\\", // must create debug floder first.
+                "/Fd:",
+                "${workspaceFolder}\\debug\\",
+                "/EHsc",
+                "/Fe:",
+                "${workspaceFolder}\\debug\\${fileBasenameNoExtension}.exe",
+                "/std:c++latest",
+                "-D_WIN32_WINNT=0x0601",
+                "/I",
+                "${workspaceFolder}\\include",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
