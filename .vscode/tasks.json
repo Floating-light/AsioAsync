@@ -6,18 +6,15 @@
             "command": "cl.exe",
             "args": [
                 "/Zi",
-                "/Fo:",
-                "${workspaceFolder}\\debug\\", // must create debug floder first.
-                "/Fd:",
-                "${workspaceFolder}\\debug\\",
+                "/Fo:", "${workspaceFolder}\\debug\\", // output file path, .exe .obj
+                "/Fd:", "${workspaceFolder}\\debug\\", // .ilk .pdb 
                 "/EHsc",
-                "/Fe:",
-                "${workspaceFolder}\\debug\\${fileBasenameNoExtension}.exe",
+                "/Fe:", "${workspaceFolder}\\debug\\${fileBasenameNoExtension}.exe", // target output file
                 "/std:c++latest",
                 "-D_WIN32_WINNT=0x0601",
-                "/I",
-                "${workspaceFolder}\\include",
-                "${file}"
+                "/I", "${workspaceFolder}\\include", // include path
+                // "${file}"
+                "${fileDirname}\\*.cpp" // compiler all cpp file in same directory of current opened file, must have a main file 
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "coroutine": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "memory": "cpp"
     }
 }
